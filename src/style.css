@@ -18,7 +18,7 @@ section {
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     border-radius: 5px;
 
@@ -30,6 +30,7 @@ section {
     & div {
         padding: 10px;
         text-align: justify;
+        height: 92px;
     }
 }
 
