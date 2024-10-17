@@ -5,7 +5,7 @@ export default {
   root: "./src/",
   publicDir: "../public/",
   build: {
-    outDir: "../dist/",
+    outDir: "../page/",
     assetsDir: "static/",
     emptyOutDir: true,
     reportCompressedSize: true,
