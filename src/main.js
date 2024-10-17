@@ -1,38 +1,46 @@
 import Sound from "./modules/sound.js";
+import typeIt from "./modules/typeEffect.js";
 
 const $ = document.querySelector.bind(document);
 
-let s1 = new Sound({
+let sonarBeep1 = new Audio("./sound/sonar_beep.mp3");
+let typeEffect1 = new Audio("./sound/typeEffect.mp3");
+
+let sonarBeep2 = new Sound({
   src: "./sound/sonar_beep.mp3",
-  volume: 0.75,
+  volume: 1,
 });
 
-let s2 = new Sound({
+let typeEffect2 = new Sound({
   src: "./sound/typeEffect.mp3",
   volume: 1,
 });
 
-document.getElementById("sound1").addEventListener("click", () => {
-  s1.play();
+let text =
+  "this is a very very very loooooooongish text string that goes on and on and on like it just won't end....";
+let typeIt1 = new typeIt({
+  id: "typeEffect1",
+  text: text,
+  sound: typeEffect1,
+});
+let typeIt2 = new typeIt({
+  id: "typeEffect2",
+  text: text,
+  sound: typeEffect2,
 });
 
-document.getElementById("sound2").addEventListener("click", () => {
-  typeText(
-    "typing",
-    "this is a very very very loooooooongish text string that goes on and on and on like it just won't end...."
-  );
+$("#sonar1").addEventListener("pointerup", () => {
+  sonarBeep1.play();
 });
 
-async function sleep(time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
+$("#typing1").addEventListener("pointerup", () => {
+  typeIt1.typeText();
+});
 
-async function typeText(elId, text) {
-  $("#" + elId).innerHTML = "";
-  for (let char of text) {
-    let time = Math.floor(Math.random() * (65 - 16 + 1)) + 16;
-    s2.play();
-    $("#" + elId).innerHTML += char;
-    await sleep(time);
-  }
-}
+$("#sonar2").addEventListener("pointerup", () => {
+  sonarBeep2.play();
+});
+
+$("#typing2").addEventListener("pointerup", () => {
+  typeIt2.typeText();
+});

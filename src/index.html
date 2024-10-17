@@ -12,10 +12,72 @@
 
 <body>
     <section>
-        <button id="sound1">Sound ♪</button>
-        <button id="sound2">Sound ♫</button>
-        <div id="typing"></div>
+        <header>
+            <p>
+                Sound.JS <br>
+                <sub>A Light Weight Class for Playing Audio</sub>
+            </p>
+        </header>
+        <p>
+            Sound.JS is a simple light weight class that will load and play audio files on demand.
+        </p>
+        <p>
+            Why not just use the default JavaScript <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio">
+                Audio</a> object?
+        </p>
+        <p>
+            Well you can. But using this method requires each instance that begins playing to finish playing before
+            starting another instance.
+        </p>
+        <p>
+            Try it out below.
+        </p>
     </section>
+
+    <section>
+        <header>
+            <p>
+                Using the Audio object:
+            </p>
+        </header>
+        <section>
+            <p>
+                No matter how many times you click the sonar pulse button, it will not start a new sound instance until
+                the
+                current one is finished.
+            </p>
+            <p>
+                The sci-fi typing sound is supposed to repeat for each letter, but as you can hear, it has to wait until
+                each sound instance is completed.
+            </p>
+            <button id="sonar1">Sonar Pulse ♪</button>
+            <button id="typing1">Sci-Fi Typing ♫</button>
+            <div id="typeEffect1"></div>
+        </section>
+    </section>
+
+    <section>
+        <header>
+            <p>
+                Using: Sound.JS Class
+            </p>
+        </header>
+        <section>
+            <p>
+                Multiple audio instances are now possible. Notice there's no latency between the audio clips if you
+                click the sonar pulse multiple times.
+            </p>
+            <p>
+                The sci-fi typing now sounds as it should.
+            </p>
+            <button id="sonar2">Sonar Pulse ♪</button>
+            <button id="typing2">Sci-Fi Typing ♫</button>
+            <div id="typeEffect2"></div>
+        </section>
+    </section>
+
+    <section>&nbsp;</section>
 </body>
 
 </html>
